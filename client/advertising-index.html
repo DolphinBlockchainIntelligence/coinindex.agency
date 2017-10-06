@@ -37,7 +37,7 @@ new Vue({
     createChart: function () {
       var highchartContainer = document.getElementById('container')
       var component = this
-      axios.get('http://dolphinbi.coinindex.agency/api-endpoint.php?symbols=ADVERTISING:INDEX&callback=')
+      axios.get('https://dolphinbi-api.coinindex.agency/api-endpoint.php?symbols=ADVERTISING:INDEX&callback=')
       .then(response => {
         var data = response.data
         Highcharts.stockChart(highchartContainer, data.data.highchart)
