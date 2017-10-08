@@ -3,15 +3,11 @@
   <head>
     <meta charset="utf-8">
 
-
 <style>
 body {
   margin: 0;
 }
-.title {
-  margin: 0 10px;
-}
-.highcharts-container, .sentimentsLineChartundefined {
+.highcharts-container {
   width: 100%;
 }
 </style>
@@ -40,10 +36,10 @@ new Vue({
       axios.get('https://dolphinbi-api.coinindex.agency/api-endpoint.php?symbols=ADVERTISING:INDEX&callback=')
       .then(response => {
         var data = response.data
-        Highcharts.stockChart(highchartContainer, data.data.highchart)
+        Highcharts.stockChart(highchartContainer, data.highchart)
       })
       .catch(e => {
-        this.errors.push(e)
+        console.log(e)
       })
     }
   }
